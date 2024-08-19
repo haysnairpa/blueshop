@@ -114,7 +114,7 @@ const createProductCard = (product) => {
     if ($(event.target).closest(".add-products").length === 0) {
       const selectedProduct = product;
       localStorage.setItem("selectedProduct", JSON.stringify(selectedProduct));
-      window.location.href = `./productDetail.html`;
+      window.location.href = `/blueshop/productDetail.html`;
     }
   });
 
