@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--================= STYLE =================-->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--================= JQUERY =================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--================= Font =================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <title>Contact Us</title>
+</head>
+
+<body class="relative overflow-hidden">
+    <!--================= NavBar =================-->
+    <nav class="nav-bar bg-[var(--third)] flex flex-row md:w-full items-center px-11 py-3 md:py-4 gap-2 md:gap-5 h-[90px] justify-between"
+        id="nav-bar">
+        <div class="nav-top flex items-center justify-between">
+            <a class="font-bold md:text-xl" href="./main.html">BLUESHOP.COM</a>
+        </div>
+
+        <div class="nav-top flex items-center justify-between">
+            <h1 class="font-bold md:text-xl text-[var(--second)]">Contact Us</h1>
+        </div>
+    </nav>
+
+    <section
+        class="mx-11 my-8 shadow-[0_0_10px_rgba(0,0,0,0.3)] p-8 rounded-xl border-[1px] border-solid flex justify-center md:w-[90%]">
+        <form id="contact-us-form" class="flex flex-col gap-4 justify-center w-full max-w-[750px]">
+            <div class="flex flex-col ga-2 md:flex-row md:items-center md:gap-4">
+                <label for="contact-email" class="text-[var(--fourth)] font-medium">Email:</label>
+                <input id="contact-email" type="email"
+                    class="outline-none border-[1px] border-solid rounded-xl py-1 min-w-0 max-w-[550px] px-4 text-black"
+                    placeholder="Enter your email" required>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label for="messages" class="text-[var(--fourth)] font-medium">Message:</label>
+                <textarea id="messages" cols="30" rows="10"
+                    class="outline-none border-[1px] border-solid rounded-xl py-1 min-w-0 max-w[550px] px-4 text-black"
+                    placeholder="Enter your messages here" required></textarea>
+            </div>
+
+            <div class="flex justify-end">
+                <button class="bg-[var(--fourth)] px-3 py-1 rounded-lg text-medium tracking-wide"
+                    type="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <div id="notif-msg"
+        class="hidden absolute bg-black/[.7] w-full h-screen top-0 left-0 flex justify-center items-center">
+        <div
+            class="mx-11 my-8 shadow-[0_0_10px_rgba(0,0,0,0.3)] p-8 rounded-xl border-[1px] border-solid flex justify-center md:w-[90%] bg-white flex-col items-center gap-5">
+            <div id="check-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="var(--fourth)"
+                    class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                    <path
+                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
+                </svg>
+            </div>
+            <div>
+                <p class="text-black font-medium">Thank you for your messages,we appriciate it!</p>
+            </div>
+            <div>
+                <button id="close-notif"
+                    class="bg-slate-700 px-3 py-1 rounded-lg text-medium tracking-wide">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const messages = $("#messages");
+        const contactUsForm = $("#contact-us-form");
+        const notifMsg = $("#notif-msg");
+        const closeBtn = $("#close-notif");
+
+        messages.focus(function () {
+            messages.addClass("border-[var(--fourth)]");
+        })
+
+        contactUsForm.submit(function (e) {
+            e.preventDefault();
+
+            messages.removeClass("border-[var(--fourth)]")
+            messages.val("");
+            notifMsg.css("display", "flex");
+        })
+
+        closeBtn.click(function () {
+            notifMsg.css("display", "none");
+        })
+    </script>
+</body>
+
+</html>

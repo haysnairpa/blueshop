@@ -1,0 +1,87 @@
+:root {
+  --first: #FAFAFA;
+  --second: #E8F1F5;
+  --third: #005691;
+  --fourth: #004A7C;
+}
+
+*, ::after, ::before {
+  padding: 0;
+  margin: 0;
+  font-family: inter;
+  color: var(--first);
+}
+/* 
+::-webkit-scrollbar {
+  height: 4px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--fourth);
+  border-radius: 50px;
+} */
+
+.cart-nums {
+  color: var(--third);
+}
+
+.buttons > button {
+  background: rgba(255, 255, 255, 0.337);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%
+}
+
+@media screen and (min-width:1027px) {
+  .buttons > button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+  }
+}
+
+.active {
+  width: 30px !important;
+  background-color: white !important;
+}
+
+.categories-container::-webkit-scrollbar {
+  height: 4px;
+  width: 8px;
+}
+
+.categories-container::-webkit-scrollbar-thumb {
+  background-color: var(--fourth);
+  border-radius: 50px;
+}
+
+.recom-card-container::-webkit-scrollbar {
+  height: 4px;
+  width: 8px;
+}
+
+.recom-card-container::-webkit-scrollbar-thumb {
+  background-color: var(--fourth);
+  border-radius: 50px;
+}
+
+.shop-card-container::-webkit-scrollbar {
+  height: 4px;
+  width: 8px;
+}
+
+.shop-card-container::-webkit-scrollbar-thumb {
+  background-color: var(--fourth);
+  border-radius: 50px;
+}
+
+.about-container {
+  background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(photo/repyok.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: auto;
+}

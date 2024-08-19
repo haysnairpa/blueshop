@@ -1,0 +1,22 @@
+:root {
+  --first: #FAFAFA;
+  --second: #E8F1F5;
+  --third: #005691;
+  --fourth: #004A7C;
+}
+
+*, ::after, ::before {
+  padding: 0;
+  margin: 0;
+  font-family: inter;
+}
+
+::-webkit-scrollbar {
+  height: 4px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--fourth);
+  border-radius: 50px;
+}

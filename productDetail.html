@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - BLUESHOP.COM</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <!-- Navbar -->
+    <header class="relative flex-col-reverse md:flex-col flex duration-1000">
+        <section class="location px-11 py-1 text-sm bg-[var(--fourth)]" id="location">
+            <p>Indonesia, West Java, Bekasi Regency, North Cikarang</p>
+        </section>
+
+        <nav class="nav-bar bg-[var(--third)] flex flex-col md:flex-row md:w-full md:items-center px-11 py-3 md:py-4 gap-2 md:gap-5 md:h-[90px] h-[120px] justify-center"
+            id="nav-bar">
+            <div class="nav-top flex items-center justify-between">
+                <h1 onclick="window.location.href = './main.html'" class="font-bold md:text-xl">BLUESHOP.COM</h1>
+                <a href="./signIn.html"
+                    class="signIn-button no-underline border border-white inline-flex py-1 px-2 rounded md:hidden font-medium tracking-wide">Sign
+                    In</a>
+            </div>
+
+            <div class="nav-below flex items-center md:w-full">
+                <form class="flex items-center w-full relative">
+                    <input type="text" placeholder="Search here" id="search-input"
+                        class="search-input text-black rounded px-1.5 py-0.5 outline-none min-w-0 w-full md:text-lg">
+                    <button type="submit" class="absolute right-[1%]">
+                        <svg class="fill-[var(--third)]" xmlns="http://www.w3.org/2000/svg"
+                            enable-background="new 0 0 24 24" height="23" viewBox="0 0 24 24" width="23"
+                            focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;">
+                            <path
+                                d="m20.87 20.17-5.59-5.59C16.35 13.35 17 11.75 17 10c0-3.87-3.13-7-7-7s-7 3.13-7 7 3.13 7 7 7c1.75 0 3.35-.65 4.58-1.71l5.59 5.59.7-.71zM10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z">
+                            </path>
+                        </svg>
+                    </button>
+                </form>
+                <div onclick="window.location.href = './cartContainer.html'" id="cart-container"
+                    class="cart-container cursor-pointer relative ml-2 flex items-center justify-center">
+                    <a href="./cartContainer.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fill-white w-[49px]" viewBox="0 0 24 24">
+                            <path
+                                d="M8,3V7H21L18,17H6V4H4A1,1,0,0,1,4,2H7A1,1,0,0,1,8,3ZM6,20.5A1.5,1.5,0,1,0,7.5,19,1.5,1.5,0,0,0,6,20.5Zm9,0A1.5,1.5,0,1,0,16.5,19,1.5,1.5,0,0,0,15,20.5Z" />
+                        </svg>
+                    </a>
+                    <p id="cart-nums" class="cart-nums inline-flex relative ml-[-50%] font-bold">0</p>
+                </div>
+                <div class="signIn-button hidden md:inline-flex md:w-[110px] md:justify-center">
+                    <a href="./signIn.html"
+                        class="no-underline border border-white py-1 px-2 rounded font-medium tracking-wide">Sign In</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail container mx-auto my-10 p-5 bg-white rounded-lg shadow-md">
+        <div class="flex flex-col md:flex-row gap-10">
+            <div class="flex-1">
+                <div class="bg-gray-200 rounded-lg overflow-hidden">
+                    <img id="product-image" src="" alt="" class="w-full h-[500px] object-contain p-4">
+                </div>
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+                <div>
+                    <h2 id="product-title" class="text-3xl font-bold text-gray-900 mb-4"></h2>
+                    <p id="product-description" class="text-gray-600 leading-relaxed mb-6"></p>
+                    <p class="text-2xl font-semibold text-blue-600">$<span id="product-price"
+                            class="text-black ml-2"></span></p>
+                </div>
+                <div class="mt-6 flex flex-col md:flex-row gap-4">
+                    <button id="add-to-cart"
+                        class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-medium">Add to
+                        Cart</button>
+                    <button onclick="window.location.href = `./main.html`"
+                        class="bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 px-6 rounded-lg font-medium">Back to
+                        Shop</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery for Product Details -->
+    <script>
+        const cartNumsContainer = $("#cart-nums");
+        let cartNums = localStorage.getItem("cartNums") || 0;
+        cartNumsContainer.html(cartNums);
+        $(document).ready(function () {
+            const product = JSON.parse(localStorage.getItem('selectedProduct'));
+            if (product) {
+                $('#product-image').attr('src', product.image);
+                $('#product-title').text(product.title);
+                $('#product-description').text(product.description);
+                $('#product-price').text(product.price);
+            }
+
+            $('#add-to-cart').click(function () {
+                let shopList = JSON.parse(localStorage.getItem('shopList')) || [];
+
+                const name = product.title
+                const price = product.price
+                const img = product.image
+
+                console.log('add product');
+
+                let itemFound = false
+
+                shopList.forEach((list) => {
+
+                    if (list.name === name) {
+                        itemFound = true;
+                        list.count++;
+                    }
+                });
+
+                if (!itemFound) {
+                    shopList.push({
+                        name,
+                        price,
+                        img,
+                        count: 1,
+                    });
+                }
+
+                localStorage.setItem("shopList", JSON.stringify(shopList));
+
+                cartNums++;
+                cartNumsContainer.html(cartNums);
+                localStorage.setItem("cartNums", JSON.stringify(cartNums));
+                console.log(shopList);
+            });
+        });
+    </script>
+    <script src="cartContainer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Page</title>
+
+    <!--================= STYLE =================-->
+    <link rel="stylesheet" href="signIn.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--================= JQUERY =================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--================= Font =================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="p-2 sm:p-4 overflow-hidden">
+<section class="relative flex flex-col items-center p-2 py-20">
+    <!--================= Title =================-->
+    <div class="title-container">
+        <h1 class="title font-bold text-2xl tracking-[2px]">BLUESHOP.COM</h1>
+    </div>
+
+    <!--================= Main Content =================-->
+    <div class="mt-8 flex flex-col items-center gap-4">
+        <div>
+            <p class="font-bold">Login to Your Account</p>
+        </div>
+
+        <form class="mt-8 signIn-form flex-col flex gap-2 justify-center items-center" id="signIn-form">
+            <!--================= Username =================-->
+            <div class="username-container relative flex items-center justify-center">
+                <div
+                    class="shadow-[3px_2px_4px_1px_rgba(0,0,0,0.2)] mr-[-12%] relative z-10 h-[70px] w-[70px] bg-slate-300 rounded-full"
+                ></div>
+                <input id="username" placeholder="Username" type="text"
+                    class="username bg-slate-300 rounded-full py-3 px-3 pl-12 shadow-[3px_2px_4px_1px_rgba(0,0,0,0.2)]"
+                >
+            </div>
+            <p id="username-desc" class="username-desc mt-[-4%] hidden text-red-600 text-[12px]">Must contain minimum 5 letter</p>
+
+            <!--================= Password =================-->
+            <div class="password-container relative flex items-center justify-center">
+                <div
+                    class="shadow-[3px_2px_4px_1px_rgba(0,0,0,0.2)] mr-[-12%] relative z-10 h-[70px] w-[70px] bg-slate-300 rounded-full">
+                </div>
+                <input id="password" placeholder="Password" type="password"
+                    class="password bg-slate-300 rounded-full py-3 px-3 pl-12 shadow-[3px_2px_4px_1px_rgba(0,0,0,0.2)]">
+            </div>
+            <p id="pass-desc" class="pass-desc hidden mt-[-5%] text-red-600 text-[12px]">Must contain minimum 8 letter</p>
+
+            <button type="submit"
+                class="mt-8 bg-[var(--fourth)] text-white font-medium px-6 py-3 rounded-full shadow-[1px_2px_4px_3px_rgba(0,0,0,0.2)]"
+            >
+                Sign In
+            </button>
+        </form>
+    </div>
+
+    <div class="flex flex-col gap-3 justify-center items-center">
+        <div class="flex justify-center items-center gap-2 mt-7">
+            <div class="h-[3px] w-[90px] bg-black rounded-full"></div>
+            <p class="font-bold text-center">Or login with:</p>
+            <div class="h-[3px] w-[90px] bg-black rounded-full"></div>
+        </div>
+
+        <div class="flex justify-center items-strectch gap-4">
+            <button class="py-2 px-7 border-solid border-[1px] border-slate-300 rounded-full shadow-[0.5px_2px_5px_2px_rgba(0,0,0,0.3)]">
+                <img src="./assets/Apple.png">
+            </button>
+            <button class="py-2 px-7 border-solid border-[1px] border-slate-300 rounded-full shadow-[0.5px_2px_5px_2px_rgba(0,0,0,0.3)]">
+                <img src="./assets/Google.png">
+            </button>
+            <button class="py-2 px-7 border-solid border-[1px] border-slate-300 rounded-full shadow-[0.5px_2px_5px_2px_rgba(0,0,0,0.3)]">
+                <img src="./assets/Facebook.png">
+            </button>
+        </div>
+    </div>
+
+    <p class="mt-6 text-center">
+        Don't have account? <a href="signUp.html" class="text-sky-800 underline">Sign Up here!</a><br> or <a href="forgotPass.html" id="forgot-pass-link" class="text-sky-800 underline">forgot password?</a>
+    </p>
+    
+    <div id="forgot-pass-desc" class="border-solid border-[1px] border-[var(--fourth)] p-2 rounded-xl hidden duration-500 absolute bottom-[3%]">
+        <p class="text-center text-[12px] text-[var(--fourth)]">Click it if you forgot <br> your Password</p>
+    </div> 
+    
+</section>
+
+<script src="slide.js"></script>
+<script src="cartContainer.js"></script>
+<script src="app.js"></script>
+</body>
+
+</html>

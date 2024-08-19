@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--================= STYLE =================-->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--================= JQUERY =================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--================= Font =================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <title>Cart List</title>
+</head>
+
+<body class="relative h-screen overflow-hidden md:overflow-visible">
+    <section class="relative h-full">
+        <header class="fixed z-10 top-0 left-0 w-full flex-col-reverse md:flex-col flex duration-1000">
+            <!--================= Location =================-->
+            <section class="location relative px-11 py-1 text-sm bg-[var(--fourth)]" id="location">
+                <p>Indonesia, West Java, Bekasi Regency, North Cikarang</p>
+            </section>
+
+            <!--================= NavBar =================-->
+            <nav class="nav-bar relative bg-[var(--third)] flex flex-row md:w-full items-center px-11 py-3 md:py-4 gap-2 md:gap-5 h-[90px] justify-between"
+                id="nav-bar">
+                <div class="nav-top flex items-center justify-between">
+                    <a class="font-bold md:text-xl" href="./main.html">BLUESHOP.COM</a>
+                </div>
+
+                <div id="cart-container"
+                    class="cart-container cursor-pointer relative ml-2 flex items-center justify-center">
+                    <a href="./cartContainer.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fill-white w-[49px]" viewBox="0 0 24 24">
+                            <path
+                                d="M8,3V7H21L18,17H6V4H4A1,1,0,0,1,4,2H7A1,1,0,0,1,8,3ZM6,20.5A1.5,1.5,0,1,0,7.5,19,1.5,1.5,0,0,0,6,20.5Zm9,0A1.5,1.5,0,1,0,16.5,19,1.5,1.5,0,0,0,15,20.5Z" />
+                        </svg>
+                    </a>
+                    <p id="cart-nums" class="cart-nums inline-flex relative ml-[-50%] font-bold">0</p>
+                </div>
+            </nav>
+        </header>
+
+        <main class="mx-11 relative top-[120px] my-5 z-0">
+            <form id="shoplist-container">
+                <div class="title p-1">
+                    <h1 class="text-black font-bold tracking-wider text-2xl">SHOP LIST</h1>
+                </div>
+
+                <div class="flex relative items-center gap-3">
+                    <div id="delete-all" class="cursor-pointer relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="grey" class="bi bi-trash3" viewBox="0 0 16 16">
+                            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+                          </svg>
+                          <p id="delete-all-txt" class="hidden translate-x-[10%] translate-y-[-200%] text-black absolute w-max text-[10px]">Click here or press "e" in your keyboard to clear your shop list</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="select-all">
+                        <label for="select-all" class="text-black">Select All</label>
+                    </div>
+                </div>
+
+                <div class="w-full bg-slate-400 h-[4px] rounded-full"></div>
+
+                <div id="shop-card-container"
+                    class="shop-card-container py-5 overflow-y-scroll h-[430px] md:h-full p-1">
+                </div>
+
+            </form>
+        </main>
+
+        <section id="total-price-container"
+            class="total-price-container bg-[var(--third)] md:hidden fixed bottom-0 h-[70px] w-full flex justify-between px-11 items-center">
+            <div>
+                <p>Total Price:</p>
+                <p>$<span id="the-total">0.00</span></p>
+            </div>
+            <div>
+                <button type="submit" form="shoplist-container"
+                    class="bg-white text-[var(--fourth)] font-semibold px-3 py-1 rounded-xl">Buy</button>
+            </div>
+        </section>
+
+        <section
+            class="hidden md:flex fixed bg-white top-[117px] right-0 max-w-[40%] w-full h-[100%] justify-center px-7 pt-20">
+            <div
+                class="bg-white shadow-[0_0_5px_rgba(0,0,0,0.3)] h-[130px] w-[90%] max-w-[320px] rounded-2xl p-5 flex flex-col justify-end gap-2">
+                <div class="flex justify-between items-center px-2">
+                    <p class="text-black">Total Price: </p>
+                    <p class="text-black">$<span id="total-price-md" class="text-black">0.00</span></p>
+                </div>
+                <button type="submit" class="bg-green-600 px-2 py-1 rounded-xl" form="shoplist-container">
+                    Buy(<span id="goods-nums">0</span>)
+                </button>
+            </div>
+        </section>
+
+        <section id="notif-shop" class="bg-black/[.7] fixed w-full h-full z-10 top-0 left-0 bottom-0 flex justify-center items-center hidden">
+            <div class="mx-11 my-8 shadow-[0_0_10px_rgba(0,0,0,0.3)] p-8 rounded-xl border-[1px] border-solid flex justify-center md:w-[90%] md:max-w-[70%] bg-white flex-col items-center gap-5">
+    
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="var(--fourth)" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+                      </svg>
+                </div>
+    
+                <div>
+                    <p class="text-black font-medium">Thank you for your purchase, we appriciate it!</p>
+                </div>
+    
+            </div>
+        </section>
+    
+    </section>
+
+    <script src="cartContainer.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

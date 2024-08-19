@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--================= STYLE =================-->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--================= JQUERY =================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--================= Font =================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <title>About</title>
+</head>
+
+<body>
+    <header class="fixed z-10 top-0 left-0 w-full flex-col-reverse md:flex-col flex duration-1000">
+        <!--================= Location =================-->
+        <section class="location relative px-4 md:px-11 py-1 text-sm bg-[var(--fourth)]" id="location">
+            <p>Indonesia, West Java, Bekasi Regency, North Cikarang</p>
+        </section>
+        
+        <!--================= NavBar =================-->
+        <nav class="nav-bar relative bg-[var(--third)] flex flex-row md:w-full items-center px-4 md:px-11 py-3 md:py-4 gap-2 md:gap-5 h-[90px] justify-center"
+        id="nav-bar">
+        <div class="nav-top flex items-center justify-center">
+            <a class="font-bold text-lg md:text-xl" href="./main.html">BLUESHOP.COM</a>
+        </div>
+</header>
+
+<section class="justify-center text-center mt-[100px] md:mt-[150px] px-4">
+    <h1 class="text-black text-center text-2xl md:text-3xl font-bold">SHORT EXPLAINER</h1> <BR>
+    <p class="text-black text-sm md:text-base mt-4">Blueshop is an online shop like Shopee, Tokopedia, Amazon, etc., <br>but that is the newbie version, because of our limited capabilities. <br> And the proccess of building this website took about 2 weeks, <br>from the date when this project assignment was given </p>
+</section>
+
+<h1 class="text-black text-center text-2xl md:text-3xl font-bold pt-6">OUR TEAM</h1>
+<main class="about-container">
+        <div class="py-8 mt-6 md:px-0">
+            <div class="about flex flex-col md:flex-row gap-5 md:gap-10 justify-center items-center ">
+                <img class="h-[300px] md:h-[400px] rounded-3xl" src="photo/parel.jpg" alt="">
+                <div class="about-text text-center md:text-left">
+                    <p class=" font-medium">Name : Farrelio Gustiana Dzaki</p>
+                    <p class=" font-medium">SID : 001202300029</p>
+                </div>
+            </div>
+            <div class="about flex flex-col md:flex-row gap-5 md:gap-10 justify-center items-center mt-10 ">
+                <div class="about-text text-center md:text-left">
+                    <p class=" font-medium">Name : Muhamad Aldi Apriansyah</p>
+                    <p class=" font-medium">SID : 001202300030</p>
+                </div>
+                <img class="h-[300px] md:h-[400px] rounded-3xl " src="photo/aldi PU.jpg" alt="">
+            </div>
+            <div class="about flex flex-col md:flex-row gap-5 md:gap-10 justify-center items-center mt-10">
+                <img class="h-[300px] md:h-[400px] rounded-3xl" src="photo/byan.jpg" alt="">
+                <div class="about-text text-center md:text-left">
+                    <p class=" font-medium">Name : Muhammad Praditya Abyan</p>
+                    <p class=" font-medium">SID : 001202300029</p>
+                </div>
+            </div>
+            <div class="about flex flex-col md:flex-row gap-5 md:gap-10 justify-center items-center mt-10 ">
+                <div class="about-text text-center md:text-left">
+                    <p class=" font-medium">Name : Revokatus Adi Pradipa</p>
+                    <p class=" font-medium">SID : 001202300030</p>
+                </div>
+                <img class="h-[300px] md:h-[400px] rounded-3xl" src="photo/repo.jpg" alt="">
+            </div>
+        </div>
+    </main>
+    
+    <h1 class="text-black text-center text-3xl font-bold py-[70px]">THANK YOU</h1>
+    
+    <footer class="bg-[var(--third)] mt-10">
+        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+          <div class="flex justify-center text-teal-600">
+            <h1 onclick="window.location.href = './main.html'" class="font-bold md:text-xl cursor-pointer">BLUESHOP.COM</h1>
+          </div>
+      
+          <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-slate-200">
+            © 2020-2023, blueshop.com, Inc. or its affiliates
+          </p>
+      
+          <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
+      
+            <li>
+              <a href="./contactUs.html" class="text-slate-200 transition hover:text-gray-500/75" href="#"> Contact Us </a>
+            </li>
+          </ul>
+      
+          
+        </div>
+      </footer>
+</body>
+
+</html>
